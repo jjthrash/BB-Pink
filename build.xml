@@ -1,4 +1,4 @@
-<project name="BB Pink" default="sign" basedir=".">
+<project name="BB Pink" default="build" basedir=".">
     <!-- set global properties for this build -->
     <property name="src" location="src"/>
     <property name="build" location="build"/>
@@ -6,7 +6,7 @@
 
     <taskdef resource="bb-ant-defs.xml"/>
 
-    <target name="sign" depends="test">
+    <target name="sign" depends="build">
         <sigtool password="${sigtool.password}">
             <cod>
                 <pathelement location="BBPink.cod"/>
@@ -14,17 +14,16 @@
         </sigtool>
     </target>
 
-    <target name="build" depends="version">
+    <target name="build">
         <mkdir dir="${build}"/>
-        <loadproperties srcFile="version.properties"/>
-        <rapc output="Common" quiet="true">
-            <jdp type="library"
-                 title="Lenovo.Common"
-                 vendor="Lenovo" 
-                 version="${version}"/>
+        <rapc output="BBPink" quiet="true">
+            <jdp type="cldc"
+                 title="BB Pink"
+                 vendor="Jimmy Thrasher" 
+                 version="0.1"/>
             <src>
                 <fileset dir="${src}">
-                    <include name="com/**/*.java"/>
+                    <include name="com/jimmythrasher/bbpink/*.java"/>
                     <exclude name="**/*Test.java"/>
                     <exclude name="**/AllTests.java"/>
                 </fileset>

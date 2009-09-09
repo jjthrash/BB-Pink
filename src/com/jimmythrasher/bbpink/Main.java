@@ -1,8 +1,15 @@
 package com.jimmythrasher.bbpink;
 
-import javax.microedition.media;
+import java.io.IOException;
 
-import net.rim.device.api.ui.component;
+import javax.microedition.media.Player;
+import javax.microedition.media.Manager;
+import javax.microedition.media.MediaException;
+
+import net.rim.device.api.ui.Field;
+import net.rim.device.api.ui.FieldChangeListener;
+import net.rim.device.api.ui.container.MainScreen;
+import net.rim.device.api.ui.component.ButtonField;
 
 class Main extends net.rim.device.api.ui.UiApplication {
     public Main() {
@@ -28,7 +35,6 @@ class Main extends net.rim.device.api.ui.UiApplication {
             if (player != null)
                 player.stop();
          } catch (MediaException pe) {
-         } catch (IOException ioe) {
          }
     }
 
