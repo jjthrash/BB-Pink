@@ -45,7 +45,7 @@ class Main extends net.rim.device.api.ui.UiApplication {
 
     protected void play() {
         try {
-            player = Manager.createPlayer("file:///"); //TODO embedded MP3 resource
+            player = Manager.createPlayer("file:///SDCard/BlackBerry/music/pink.mp3"); //TODO embedded MP3 resource
             player.setLoopCount(-1);
             player.start();
         } catch (Throwable pe) {
