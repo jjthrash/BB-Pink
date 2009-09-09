@@ -28,23 +28,24 @@ class Main extends net.rim.device.api.ui.UiApplication {
                 playing = !playing;
             }
         });
+
+        pushScreen(mainScreen);
     }
 
     protected void stop() {
         try {
             if (player != null)
                 player.stop();
-         } catch (MediaException pe) {
+         } catch (Throwable pe) {
          }
     }
 
     protected void play() {
         try {
-            player = Manager.createPlayer("http://abc.wav"); //TODO embedded MP3 resource
+            player = Manager.createPlayer("file:///"); //TODO embedded MP3 resource
             player.setLoopCount(-1);
             player.start();
-        } catch (MediaException pe) {
-        } catch (IOException ioe) {
+        } catch (Throwable pe) {
         }
 
     }
