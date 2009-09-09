@@ -17,6 +17,7 @@ class Main extends net.rim.device.api.ui.UiApplication {
 
         MainScreen mainScreen = new MainScreen();
         mainScreen.setTitle("PINK!");
+
         ButtonField button = new ButtonField("Go");
         button.setChangeListener(new FieldChangeListener() {
             public void fieldChanged(Field field, int context) {
@@ -28,6 +29,8 @@ class Main extends net.rim.device.api.ui.UiApplication {
                 playing = !playing;
             }
         });
+
+        mainScreen.add(button);
 
         pushScreen(mainScreen);
     }
