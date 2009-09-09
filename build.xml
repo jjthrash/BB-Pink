@@ -19,7 +19,8 @@
         <rapc output="BBPink" quiet="true">
             <jdp type="cldc"
                  title="BB Pink"
-                 vendor="Jimmy Thrasher" 
+                 icon="images/icon.png"
+                 vendor="Jimmy Thrasher"
                  version="0.1"/>
             <src>
                 <fileset dir="${src}">
